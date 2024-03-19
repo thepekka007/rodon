@@ -1,0 +1,1248 @@
+{% extends 'base.html' %}
+!
+{% block content %}
+{% load static %}
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-MqXxXZNHD0d6Gds6E7neTkYLgP1uL72aD7jiuySbNsFkMVO/s2j4B9teFzfu+/4ZWRj6vXvJuV9xmVZC8f9d9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+<link href="{% static 'css/style3.css' %}" rel="stylesheet">
+<link href="{% static 'css/style4.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+@import url(https://fonts.googleapis.com/css?family=Bangers);
+@import url(https://fonts.googleapis.com/css?family=Chewy);
+    @media (max-width: 768px) { /* Adjust max-width as per your mobile breakpoint */
+        .mobile-image {
+            height: 600px; /* Specify the height for mobile view */
+            width: auto; /* Maintain aspect ratio */
+            margin-top: -10%; /* Adjust margin as needed */
+        }
+    }
+    
+    blockquote {
+   color: rgba(74, 60, 40, 0.6);
+   font-family: Tahoma, sans-serif;
+   font-size: 40px;
+   width: 60%;
+   margin: 0 auto;
+}
+blockquote h1 {
+   font-size: 4rem;
+}
+blockquote p {
+   font-style: italic;
+   margin-bottom: 0;
+}
+
+blockquote p::before,
+blockquote p::after {
+   content: "“";
+   font-family: Georgia;
+   font-size: 8rem;
+   margin: -2rem 0 0 -4rem;
+   position: absolute;
+   opacity: 0.5;
+}
+
+blockquote p::after {
+   content: "”";
+   margin: -1rem -4rem 0 0;
+}
+
+blockquote cite {
+   font-size: 1.5rem;
+}
+
+</style>
+<style>
+
+button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+button.learn-more {
+  width: 12rem;
+  height: auto;
+}
+
+button.learn-more .circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: #282936;
+  border-radius: 1.625rem;
+}
+
+button.learn-more .circle .icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #fff;
+}
+
+button.learn-more .circle .icon.arrow {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+}
+
+button.learn-more .circle .icon.arrow::before {
+  position: absolute;
+  content: '';
+  top: -0.25rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #fff;
+  border-right: 0.125rem solid #fff;
+  transform: rotate(45deg);
+}
+
+button.learn-more .button-text {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin: 0 0 0 1.85rem;
+  color: #282936;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+button:hover .circle {
+  width: 100%;
+}
+
+button:hover .circle .icon.arrow {
+  background: #fff;
+  transform: translate(1rem, 0);
+}
+
+button:hover .button-text {
+  color: #fff;
+}
+
+
+</style>
+<style>
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .quote-container {
+        display: none;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .quote-container {
+        display: none;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .quote-container {
+        display: none;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .quote-container {
+        display: none;
+    }
+}
+@media only screen and (max-width: 1100px) {
+    .quote-container {
+        display: none;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .quote-container {
+        display: none;
+    }
+}
+@media only screen and (max-width: 1300px) {
+    .quote-container {
+        display: none;
+    }
+}
+
+
+
+
+.testimonial-container{
+  background-color: #195c3d9c;
+  color: #fff;
+  border-radius: 5px;
+  margin: 20px auto;
+  padding: 50px 80px;
+  max-width: 768px;
+  position:relative;
+}
+
+.fa-quote{
+  color:#FFD369;
+  font-size: 28px;
+  position: absolute;
+  top: 70px;
+}
+
+.fa-quote-right{
+  left: 40px;
+}
+
+.fa-quote-left{
+  right: 40px;
+}
+
+.testimonial{
+  line-height: 1.7;
+  text-align: justify;
+  margin-bottom: 30px;
+}
+
+.user{
+  display:flex;
+  align-items:center;
+  justify-content: center;
+}
+
+.user .user-image{
+  border-radius: 50%;
+  border: 3px solid #FFD369;
+  height: 75px;
+  width: 75px;
+  object-fit: cover;
+}
+
+.user .user-details{
+  margin-left: 10px;
+}
+
+.user .username{
+  margin: 0;
+}
+
+.user .role{
+  font-weight: normal;
+  margin: 10px 0;
+}
+
+.progress-bar{
+  background-color: #FFD369;
+  height: 4px;
+  width: 100%;
+  margin-bottom: 40px;
+  animation: grow 10s linear infinite;
+  transform-origin: left;
+}
+
+@keyframes grow{
+  0%{
+    transform: scaleX(0);
+  }
+}
+
+
+
+
+@media(max-width: 768px){
+  .testimonial-container{
+    padding: 20px 30px;
+  }
+  
+  .fa-quote{
+    display: none;
+  }
+}
+</style>
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+<div style="display: flex; justify-content: center;">
+    <img src="{% static 'images/3.jpg' %}" class="img-fluid" style="width: 100%;  margin-top: -20%;">
+    <div class="quote-container">
+      <div style="position: absolute; top: 50%; left: 35%; transform: translate(-50%, -50%); text-align: center; color: rgba(255, 255, 255, 0.692); font-size: 40px; font-style: italic; background-color: rgba(0, 0, 0, 0); padding: 60px;font-family:'Chewy' ;">
+        <p><strong style="color: #282936a5;font-size: 80px;" >Contact Us!</cite>
+          
+      </div>
+  </div>
+  
+  
+    
+   
+</div>
+     <br>
+
+     <style>
+        #holi {
+      border-bottom: rgba(255, 0, 0, 0.515) solid 5px;
+      text-align: center;
+      width: 30vw;
+      margin: 0 auto;
+      height: 12vh;
+      font-size: 20px;
+      border-radius: 25vw / 5vh;
+      }
+      </style>
+      <div id="holi">
+        <h1 class="mb-3">Contact Us </h1>
+        <!-- <a class="float-button container-fluid " target="_blank" href="https://faq.whatsapp.com/general/chats/how-to-use-click-to-chat/?lang=en">
+          <i class="fa fa-whatsapp" aria-hidden="true"></i>
+          <span>Message me<span>
+        </a> -->
+        
+      </div>
+            <!-- Contact Start -->
+            <div class="container-xxl py-5">
+                <div class="container">
+                    <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                        <!-- <h1 class="mb-3">Contact Us</h1> -->
+                        <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <div class="row gy-4">
+                                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
+                                    <div class="bg-light rounded p-3">
+                                        <div class="d-flex align-items-center bg-white rounded p-3" style="border: 1px dashed rgba(0, 185, 142, .3)">
+                                            <div class="icon me-3" style="width: 45px; height: 45px;">
+                                                <span class="material-symbols-outlined">
+                                                    location_on
+                                                    </span>
+                                            </div>
+                                            <span style="font-size: 15px;">Vadassery house, P.O.Avanoor,Thrissur - 680541</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
+                                  <div class="bg-light rounded p-3">
+                                      <div class="d-flex align-items-center bg-white rounded p-3" style="border: 1px dashed rgba(0, 185, 142, .3)">
+                                          <div class="icon me-3" style="width: 45px; height: 45px;">
+                                            <span class="material-symbols-outlined">
+                                              mail
+                                              </span>
+                                          </div>
+                                          <span style="font-size: 10px;" id="fontsox">vgnarayanankutti@gmail.com</span>
+                                      </div>
+                                  </div>
+                              </div>
+                                <!-- <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+                                    <div class="bg-light rounded p-3">
+                                        <div class="d-flex align-items-center bg-white rounded p-3" style="border: 1px dashed rgba(0, 185, 142, .3)">
+                                            <div class="icon me-3" style="width: 35px; height: 45px;">
+                                                <span class="material-symbols-outlined">
+                                                    mail
+                                                    </span>
+                                            </div>
+                                            <span style="font-size: 15px;">vgnarayanankutti@gmail.com</span>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
+                                    <div class="bg-light rounded p-3">
+                                        <div class="d-flex align-items-center bg-white rounded p-3" style="border: 1px dashed rgba(0, 185, 142, .3)">
+                                            <div class="icon me-3" style="width: 45px; height: 45px;">
+                                                <span class="material-symbols-outlined">
+                                                    call
+                                                    </span>
+                                            </div>
+                                            <span style="font-size: 15px;">+91  9061109405</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <iframe class="position-relative rounded w-100 h-100"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3921.7683920390514!2d76.1728011758371!3d10.597272912471093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7ebe3ca8e4e2b%3A0x39b29c6588699ed0!2sAvanoor%2C%20Kerala!5e0!3m2!1sen!2sin!4v1710822358425!5m2!1sen!2sin"
+                                frameborder="0" style="min-height: 400px; border:0;" allowfullscreen="" aria-hidden="false"
+                                tabindex="0"></iframe>
+                        </div>
+                      <div class="col-md-6">
+                            <div class="wow fadeInUp" data-wow-delay="0.5s">
+                                <br>
+                              <h3>Reach  Us</h3>
+                              <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                             
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Contact End -->
+            <div class="container" style="width: auto;">
+                <div class="row justify-content-center align-items-center" style="min-height: 100vh;"> <!-- Centering the row vertically and horizontally -->
+                    <div class="col-md-12 jus">
+                        <div class="wow fadeInUp" data-wow-delay="0.5s">
+                            <div class="section-title justify-content-center" style="justify-content: center;" >
+                                <h2 style="color: #282936; justify-content: center;">Get In Touch</h2>
+                                <p style="font-size: 18px;">Please fill out the form below to send us an email and we will get back to you as soon as possible.</p>
+                              </div> <form>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                            <label for="name">Your Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                            <label for="email">Your Email</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                            <label for="subject">Subject</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
+                                            <label for="message">Message</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<!-- Contact Section -->
+<!-- <div id="contact" style="background-color: #28293600;color: rgba(18, 77, 18, 0.667);font-size: 60px;display: flex; justify-content: center;">
+    <div class="container" >
+      <div class="col-md-">
+        <div class="row">
+       
+          <form name="sentMessage" id="contactForm" novalidate>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" id="name" class="form-control" placeholder="Name" required="required" style="background-color: rgba(255, 255, 255, 0.607);">
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="email" id="email" class="form-control" placeholder="Email" required="required" style="background-color: rgba(255, 255, 255, 0.607);">
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <textarea name="message" id="message" class="form-control" rows="4" placeholder="Message" required style="background-color: rgba(255, 255, 255, 0.607);"></textarea>
+              <p class="help-block text-danger"></p>
+            </div>
+            <div id="success"></div>
+            <button type="submit" class="btn btn-custom btn-lg" style="font-size: 18px;color:#282936">Send Message</button>
+          </form>
+        </div>
+      </div>
+      <!-- <div class="col-md-3 col-md-offset-1 contact-info">
+        <div class="contact-item">
+          <h4 >Contact Info</h4>
+          <p><span>Address</span>4321 California St,<br>
+            San Francisco, CA 12345</p>
+        </div>
+        <div class="contact-item">
+          <p><span>Phone</span> +1 123 456 1234</p>
+        </div>
+        <div class="contact-item">
+          <p><span>Email</span> info@company.com</p>
+        </div>
+      </div> -->
+      <!-- <div class="col-md-12">
+        <div class="row">
+          <div class="social">
+            <ul>
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+              <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  -->
+
+
+  <style>.container{
+	max-width: 1170px;
+	margin:auto;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	background-color:rgba(105, 106, 105, 0);
+    padding: 70px 0;
+    color: #24262b;
+    
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #fffefe;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+  color: #24262b;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+  color: #24262b;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+  color: #24262b;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+
+
+
+</style>
+<style>
+    @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,600");
+  .chatbot {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -6px 99px -17px rgba(0, 0, 0, 0.68);
+  }
+  @media screen and (min-width: 640px) {
+  .chatbot {
+  max-width: 420px;
+  right: 80px;
+  top: auto;
+  }
+  }
+  .chatbot.chatbot--closed {
+  top: auto;
+  width: 100%;
+  }
+  
+  .chatbot__header {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1c722d;
+  height: 54px;
+  padding: 0 20px;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  }
+  .chatbot__header:hover {
+  background-color: #393285;
+  }
+  .chatbot__header p {
+  margin-right: 20px;
+  }
+  
+  .chatbot__close-button {
+  fill: #fff;
+  }
+  .chatbot__close-button.icon-speech {
+  width: 20px;
+  display: none;
+  }
+  .chatbot--closed .chatbot__close-button.icon-speech {
+  display: block;
+  }
+  .chatbot__close-button.icon-close {
+  width: 14px;
+  }
+  .chatbot--closed .chatbot__close-button.icon-close {
+  display: none;
+  }
+  
+  .chatbot__message-window {
+  height: calc(100% - (54px + 60px));
+  padding: 40px 20px 20px;
+  background-color: #fff;
+  overflow-x: none;
+  overflow-y: auto;
+  }
+  @media screen and (min-width: 640px) {
+  .chatbot__message-window {
+  height: 380px;
+  }
+  }
+  .chatbot__message-window::-webkit-scrollbar {
+  display: none;
+  }
+  .chatbot--closed .chatbot__message-window {
+  display: none;
+  }
+  
+  .chatbot__messages {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  }
+  .chatbot__messages li {
+  margin-bottom: 20px;
+  }
+  .chatbot__messages li.is-ai {
+  display: inline-flex;
+  align-items: flex-start;
+  }
+  .chatbot__messages li.is-user {
+  text-align: right;
+  display: inline-flex;
+  align-self: flex-end;
+  }
+  .chatbot__messages li .is-ai__profile-picture {
+  margin-right: 8px;
+  }
+  .chatbot__messages li .is-ai__profile-picture .icon-avatar {
+  width: 40px;
+  height: 40px;
+  padding-top: 6px;
+  }
+  
+  .chatbot__message {
+  display: inline-block;
+  padding: 12px 20px;
+  word-break: break-word;
+  margin: 0;
+  border-radius: 6px;
+  letter-spacing: -0.01em;
+  line-height: 1.45;
+  overflow: hidden;
+  }
+  .is-ai .chatbot__message {
+  background-color: #f0f0f0;
+  margin-right: 30px;
+  }
+  .is-user .chatbot__message {
+  background-color: #7ee0d2;
+  margin-left: 30px;
+  }
+  .chatbot__message a {
+  color: #7226e0;
+  word-break: break-all;
+  display: inline-block;
+  }
+  .chatbot__message p:first-child {
+  margin-top: 0;
+  }
+  .chatbot__message p:last-child {
+  margin-bottom: 0;
+  }
+  .chatbot__message button {
+  background-color: #fff;
+  font-weight: 300;
+  border: 2px solid #7226e0;
+  border-radius: 50px;
+  padding: 8px 20px;
+  margin: -8px 10px 18px 0;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+  }
+  .chatbot__message button:hover {
+  background-color: #f2f2f2;
+  }
+  .chatbot__message button:focus {
+  outline: none;
+  }
+  .chatbot__message img {
+  max-width: 100%;
+  }
+  .chatbot__message .card {
+  background-color: #fff;
+  text-decoration: none;
+  overflow: hidden;
+  border-radius: 6px;
+  color: black;
+  word-break: normal;
+  }
+  .chatbot__message .card .card-content {
+  padding: 20px;
+  }
+  .chatbot__message .card .card-title {
+  margin-top: 0;
+  }
+  .chatbot__message .card .card-button {
+  color: #7226e0;
+  text-decoration: underline;
+  }
+  
+  .animation:last-child {
+  -webkit-animation: fadein 0.25s;
+      animation: fadein 0.25s;
+  -webkit-animation-timing-function: all 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      animation-timing-function: all 200ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  
+  .chatbot__arrow {
+  width: 0;
+  height: 0;
+  margin-top: 18px;
+  }
+  
+  .chatbot__arrow--right {
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 6px solid #7ee0d2;
+  }
+  
+  .chatbot__arrow--left {
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right: 6px solid #f0f0f0;
+  }
+  
+  .chatbot__entry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 20px;
+  border-top: 1px solid #e6eaee;
+  background-color: #fff;
+  }
+  .chatbot--closed .chatbot__entry {
+  display: none;
+  }
+  
+  .chatbot__input {
+  height: 100%;
+  width: 80%;
+  border: 0;
+  }
+  .chatbot__input:focus {
+  outline: none;
+  }
+  .chatbot__input::-webkit-input-placeholder {
+  color: #7f7f7f;
+  }
+  .chatbot__input::-moz-placeholder {
+  color: #7f7f7f;
+  }
+  .chatbot__input::-ms-input-placeholder {
+  color: #7f7f7f;
+  }
+  .chatbot__input::-moz-placeholder {
+  color: #7f7f7f;
+  }
+  
+  .chatbot__submit {
+  fill: #7226e0;
+  height: 22px;
+  width: 22px;
+  transition: fill 0.2s ease;
+  cursor: pointer;
+  }
+  .chatbot__submit:hover {
+  fill: #45148c;
+  }
+  
+  .u-text-highlight {
+  color: #7ee0d2;
+  }
+  
+  .loader {
+  margin-bottom: -2px;
+  text-align: center;
+  opacity: 0.3;
+  }
+  
+  .loader__dot {
+  display: inline-block;
+  vertical-align: middle;
+  width: 6px;
+  height: 6px;
+  margin: 0 1px;
+  background: black;
+  border-radius: 50px;
+  -webkit-animation: loader 0.45s infinite alternate;
+      animation: loader 0.45s infinite alternate;
+  }
+  .loader__dot:nth-of-type(2) {
+  -webkit-animation-delay: 0.15s;
+      animation-delay: 0.15s;
+  }
+  .loader__dot:nth-of-type(3) {
+  -webkit-animation-delay: 0.35s;
+      animation-delay: 0.35s;
+  }
+  
+  @-webkit-keyframes loader {
+  0% {
+  transform: translateY(0);
+  }
+  100% {
+  transform: translateY(-5px);
+  }
+  }
+  
+  @keyframes loader {
+  0% {
+  transform: translateY(0);
+  }
+  100% {
+  transform: translateY(-5px);
+  }
+  }
+  @-webkit-keyframes fadein {
+  from {
+  opacity: 0;
+  margin-top: 10px;
+  margin-bottom: 0;
+  }
+  to {
+  opacity: 1;
+  margin-top: 0;
+  margin-bottom: 10px;
+  }
+  }
+  @keyframes fadein {
+  from {
+  opacity: 0;
+  margin-top: 10px;
+  margin-bottom: 0;
+  }
+  to {
+  opacity: 1;
+  margin-top: 0;
+  margin-bottom: 10px;
+  }
+  }
+  * {
+  box-sizing: border-box;
+  }
+  
+  
+  input {
+  font-family: "Open Sans", sans-serif;
+  }
+  
+  strong {
+  font-weight: 600;
+  }
+  
+  .intro {
+  display: block;
+  margin-bottom: 20px;
+  }
+  </style>
+  <div class="chatbot chatbot--closed">
+    <div class="chatbot__header">
+      <p><strong>Got a question?</strong> <span class="u-text-highlight">Enquire</span></p>
+      <svg class="chatbot__close-button icon-speech" viewBox="0 0 32 32">
+        <use xlink:href="#icon-speech" />
+      </svg>
+      <svg class="chatbot__close-button icon-close" viewBox="0 0 32 32">
+        <use xlink:href="#icon-close" />
+      </svg>
+    </div>
+    <div class="chatbot__message-window">
+      <ul class="chatbot__messages">
+        <li class="is-ai animation">
+          <div class="is-ai__profile-picture">
+            <svg class="icon-avatar" viewBox="0 0 32 32">
+              <use xlink:href="#avatar" />
+            </svg>
+          </div>
+          <span class="chatbot__arrow chatbot__arrow--left"></span>
+          <p class='chatbot__message'>Hi there 🖐. I’m Harry, your virtual assistant. I'm here to help with your general enquiries.</p>
+        </li>
+        <!-- Answer and response added here -->
+      </ul>
+    </div>
+    <div class="chatbot__entry chatbot--closed">
+      <input type="text" style="font-size: 20px;"  class="chatbot__input" placeholder="Write a message..." />
+      <svg class="chatbot__submit" viewBox="0 0 32 32">
+        <use xlink:href="#icon-send" />
+      </svg>
+    </div>
+  </div>
+  
+  <!-- Symbols -->
+  <svg>
+    <!-- Close icon -->
+    <symbol id="icon-close" viewBox="0 0 32 32">
+      <title>Close</title>
+      <path d="M2.624 8.297l2.963-2.963 23.704 23.704-2.963 2.963-23.704-23.704z" />
+      <path d="M2.624 29.037l23.704-23.704 2.963 2.963-23.704 23.704-2.963-2.963z" />
+    </symbol>
+  
+    <!-- Speech icon -->
+    <symbol id="icon-speech" viewBox="0 0 32 32">
+      <title>Speech</title>
+      <path d="M21.795 5.333h-11.413c-0.038 0-0.077 0-0.114 0l-0.134 0.011v2.796c0.143-0.006 0.273-0.009 0.385-0.009h11.277c0.070 0 7.074 0.213 7.074 7.695 0 5.179-2.956 7.695-9.036 7.695h-3.792c-0.691 0-1.12 0.526-1.38 1.159l-1.387 3.093-1.625 3.77 0.245 0.453h2.56l2.538-5.678h2.837c7.633 0 11.84-3.727 11.84-10.494 0.001-8.564-7.313-10.492-9.875-10.492z" />
+      <path d="M10.912 24.259c-0.242-0.442-0.703-0.737-1.234-0.737-0 0-0 0-0 0h-0.56c-0.599-0.011-1.171-0.108-1.71-0.28l0.042 0.012c-1.82-0.559-4.427-2.26-4.427-7.424 0-6.683 5.024-7.597 7.109-7.686v-2.8c-2.042 0.095-9.91 1.067-9.91 10.483 0 4.832 1.961 7.367 3.606 8.64 1.38 1.067 3.109 1.744 4.991 1.843l0.033 0.019 2.805 5.211 1.41-3.273z" />
+    </symbol>
+  
+    <!-- Send icon -->
+    <symbol id="icon-send" viewBox="0 0 23.97 21.9">
+      <title>Send</title>
+      <path d="M0.31,9.43a0.5,0.5,0,0,0,0,.93l8.3,3.23L23.15,0Z"/>
+      <path d="M9,14.6H9V21.4a0.5,0.5,0,0,0,.93.25L13.22,16l6,3.32A0.5,0.5,0,0,0,20,19l4-18.4Z"/>
+    </symbol>
+    
+    <!-- Avatar icon -->
+    <symbol id="avatar" width="32" height="32" viewBox="0 0 44.25 44">
+      <title>Avatar</title>
+      <path style="fill: #7226e0; fill-rule: evenodd;" d="M1035.88,1696.25a22,22,0,1,1-22.13,22A22.065,22.065,0,0,1,1035.88,1696.25Z" transform="translate(-1013.75 -1696.25)"/>
+      <path style="fill: #fff; fill-rule: evenodd;" d="M1030.18,1725.16h2.35a0.335,0.335,0,0,0,.34-0.33v-5.23h5.94v5.23a0.342,0.342,0,0,0,.34.33h2.36a0.342,0.342,0,0,0,.34-0.33v-12.36a0.34,0.34,0,0,0-.34-0.32h-2.36a0.34,0.34,0,0,0-.34.32v4.51h-5.94v-4.51a0.333,0.333,0,0,0-.34-0.32h-2.35a0.333,0.333,0,0,0-.34.32v12.36a0.335,0.335,0,0,0,.34.33" transform="translate(-1013.75 -1696.25)"/>
+    </symbol>
+    
+  </svg>
+  
+  <script>const accessToken = '3796899bd37c423bad3a21a25277bce0';
+    const baseUrl = 'https://api.api.ai/api/query?v=2015091001';
+    const sessionId = '20150910';
+    const loader = `<span class='loader'><span class='loader__dot'></span><span class='loader__dot'></span><span class='loader__dot'></span></span>`;
+    const errorMessage = 'My apologies, I\'m not avail at the moment, however, feel free to call our support team directly 0123456789.';
+    const urlPattern = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim;
+    const $document = document;
+    const $chatbot = $document.querySelector('.chatbot');
+    const $chatbotMessageWindow = $document.querySelector('.chatbot__message-window');
+    const $chatbotHeader = $document.querySelector('.chatbot__header');
+    const $chatbotMessages = $document.querySelector('.chatbot__messages');
+    const $chatbotInput = $document.querySelector('.chatbot__input');
+    const $chatbotSubmit = $document.querySelector('.chatbot__submit');
+    
+    const botLoadingDelay = 1000;
+    const botReplyDelay = 2000;
+    
+    document.addEventListener('keypress', event => {
+      if (event.which == 13) validateMessage();
+    }, false);
+    
+    $chatbotHeader.addEventListener('click', () => {
+      toggle($chatbot, 'chatbot--closed');
+      $chatbotInput.focus();
+    }, false);
+    
+    $chatbotSubmit.addEventListener('click', () => {
+      validateMessage();
+    }, false);
+    
+    const toggle = (element, klass) => {
+      const classes = element.className.match(/\S+/g) || [],
+      index = classes.indexOf(klass);
+      index >= 0 ? classes.splice(index, 1) : classes.push(klass);
+      element.className = classes.join(' ');
+    };
+    
+    const userMessage = content => {
+      $chatbotMessages.innerHTML += `<li class='is-user animation'>
+          <p class='chatbot__message'>
+            ${content}
+          </p>
+          <span class='chatbot__arrow chatbot__arrow--right'></span>
+        </li>`;
+    };
+    
+    const aiMessage = (content, isLoading = false, delay = 0) => {
+      setTimeout(() => {
+        removeLoader();
+        $chatbotMessages.innerHTML += `<li 
+          class='is-ai animation' 
+          id='${isLoading ? "is-loading" : ""}'>
+            <div class="is-ai__profile-picture">
+              <svg class="icon-avatar" viewBox="0 0 32 32">
+                <use xlink:href="#avatar" />
+              </svg>
+            </div>
+            <span class='chatbot__arrow chatbot__arrow--left'></span>
+            <div class='chatbot__message'>${content}</div>
+          </li>`;
+        scrollDown();
+      }, delay);
+    };
+    
+    const removeLoader = () => {
+      let loadingElem = document.getElementById('is-loading');
+      if (loadingElem) $chatbotMessages.removeChild(loadingElem);
+    };
+    
+    const escapeScript = unsafe => {
+      const safeString = unsafe.
+      replace(/</g, ' ').
+      replace(/>/g, ' ').
+      replace(/&/g, ' ').
+      replace(/"/g, ' ').
+      replace(/\\/, ' ').
+      replace(/\s+/g, ' ');
+      return safeString.trim();
+    };
+    
+    const linkify = inputText => {
+      return inputText.replace(urlPattern, `<a href='$1' target='_blank'>$1</a>`);
+    };
+    
+    const validateMessage = () => {
+      const text = $chatbotInput.value;
+      const safeText = text ? escapeScript(text) : '';
+      if (safeText.length && safeText !== ' ') {
+        resetInputField();
+        userMessage(safeText);
+        send(safeText);
+      }
+      scrollDown();
+      return;
+    };
+    
+    const multiChoiceAnswer = text => {
+      const decodedText = text.replace(/zzz/g, "'");
+      userMessage(decodedText);
+      send(decodedText);
+      scrollDown();
+      return;
+    };
+    
+    const processResponse = val => {
+      if (val && val.fulfillment) {
+        let output = '';
+        let messagesLength = val.fulfillment.messages.length;
+    
+        for (let i = 0; i < messagesLength; i++) {if (window.CP.shouldStopExecution(0)) break;
+          let message = val.fulfillment.messages[i];
+          let type = message.type;
+    
+          switch (type) {
+            // 0 fulfillment is text
+            case 0:
+              let parsedText = linkify(message.speech);
+              output += `<p>${parsedText}</p>`;
+              break;
+    
+            // 1 fulfillment is card
+            case 1:
+              let imageUrl = message.imageUrl;
+              let imageTitle = message.title;
+              let imageSubtitle = message.subtitle;
+              let button = message.buttons[0];
+    
+              if (!imageUrl && !button && !imageTitle && !imageSubtitle) break;
+    
+              output += `
+                <a class='card' href='${button.postback}' target='_blank'>
+                  <img src='${imageUrl}' alt='${imageTitle}' />
+                <div class='card-content'>
+                  <h4 class='card-title'>${imageTitle}</h4>
+                  <p class='card-title'>${imageSubtitle}</p>
+                  <span class='card-button'>${button.text}</span>
+                </div>
+                </a>
+              `;
+              break;
+    
+            // 2 fulfillment is a quick reply with multi-choice buttons
+            case 2:
+              let title = message.title;
+              let replies = message.replies;
+              let repliesLength = replies.length;
+              output += `<p>${title}</p>`;
+    
+              for (let i = 0; i < repliesLength; i++) {if (window.CP.shouldStopExecution(1)) break;
+                let reply = replies[i];
+                let encodedText = reply.replace(/'/g, 'zzz');
+                output += `<button onclick='multiChoiceAnswer("${encodedText}")'>${reply}</button>`;
+              }window.CP.exitedLoop(1);
+              break;}
+    
+        }window.CP.exitedLoop(0);
+    
+        removeLoader();
+        return output;
+      }
+    
+      removeLoader();
+      return `<p>${errorMessage}</p>`;
+    };
+    
+    const setResponse = (val, delay = 0) => {
+      setTimeout(() => {
+        aiMessage(processResponse(val));
+      }, delay);
+    };
+    
+    const resetInputField = () => {
+      $chatbotInput.value = '';
+    };
+    
+    const scrollDown = () => {
+      const distanceToScroll =
+      $chatbotMessageWindow.scrollHeight - (
+      $chatbotMessages.lastChild.offsetHeight + 60);
+      $chatbotMessageWindow.scrollTop = distanceToScroll;
+      return false;
+    };
+    
+    const send = (text = '') => {
+      fetch(`${baseUrl}&query=${text}&lang=en&sessionId=${sessionId}`, {
+        method: 'GET',
+        dataType: 'json',
+        headers: {
+          Authorization: 'Bearer ' + accessToken,
+          'Content-Type': 'application/json; charset=utf-8' } }).
+    
+    
+      then(response => response.json()).
+      then(res => {
+        if (res.status < 200 || res.status >= 300) {
+          let error = new Error(res.statusText);
+          throw error;
+        }
+        return res;
+      }).
+      then(res => {
+        setResponse(res.result, botLoadingDelay + botReplyDelay);
+      }).
+      catch(error => {
+        setResponse(errorMessage, botLoadingDelay + botReplyDelay);
+        resetInputField();
+        console.log(error);
+      });
+    
+      aiMessage(loader, true, botLoadingDelay);
+    };</script>
+  
+  
+  <footer class="footer" style="background-color: #454f45;">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col"  style="color:#050505 ;">
+          <h4>company</h4>
+          <ul style="color: #24262b;">
+            <li><a href="#" style="color:#050505 ;">about us</a></li>
+            <li><a href="#"  style="color:#050505 ;">our services</a></li>
+            <li><a href="#"  style="color:#050505 ;">privacy policy</a></li>
+            <!-- <li><a href="#"  style="color:#050505 ;">affiliate program</a></li> -->
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>get help</h4>
+          <ul>
+            <li><a href="#"  style="color:#050505 ;">FAQ</a></li>
+            <li><a href="#"  style="color:#050505 ;">Contact Us</a></li>
+            <li><a href="#"  style="color:#050505 ;">+91  9846909300</a></li>
+            <!-- <li><a href="#"  style="color:#050505 ;">order status</a></li>
+            <li><a href="#"  style="color:#050505 ;">payment options</a></li> -->
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#"  style="color:#050505 ;">Property Management</a></li>
+            <li><a href="#"  style="color:#050505 ;">Marketing</a></li>
+            <li><a href="#"  style="color:#050505 ;">Negositaion</a></li>
+            <!-- <li><a href="#"  style="color:#050505 ;">Allied Services</a></li> -->
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>follow us</h4>
+          <div class="social-links">
+       
+
+            <style>
+                .fa {
+                    font-size: 30px;
+                    /* * Adjust this value to change the size */ 
+                    /* You can also use other CSS properties to further customize the size */
+                }
+            </style>
+          
+          <i class="fa fa-facebook"></i>
+           <i class="fa fa-twitter"></i>
+          <i class="fa fa-instagram"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+ </footer>
+{% endblock %}
