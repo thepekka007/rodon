@@ -406,7 +406,9 @@ button:hover .button-text {
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <h1 class="mb-3">Services We Provide</h1>
-                    <p>We are the one of the top companies who provide top services to out Customers.</p>
+                    <p>we are the on of the top companies who provide services to out Customers.</p>
+                    <p>We offer comprehensive solutions tailored to meet your needs. From expert negotiation and valuation to cutting-edge virtual tours and beyond, trust us to elevate your experience and exceed expectations.
+                    </p>
                 </div>
                 <div class="row g-4">
                     <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -496,7 +498,7 @@ button:hover .button-text {
                                 <h6>Virtual tours and  houses</h6>
                                 <span>123 Properties</span>
                             </div>
-                        </a>s
+                        </a>
                     </div>
                 </div>
             </div>
@@ -515,27 +517,30 @@ button:hover .button-text {
         }
         </style>
         <div id="holi">
-          <h1 class="mb-3">Our    Client Says</h1>
+          <h1 class="mb-3" style="font-size: 20px;">What Our Client Says?
+          </h1>
         </div>
         <div class="container-xxl py-5" id="Testimonial">
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                  
-                    <p>We are the one of the top companies who provide top services to out Customers.</p>
+                    <p>Discover firsthand experiences from our valued clients. Hear their stories, insights, and testimonials, reflecting our commitment to exceptional service and client satisfaction.
+                    </p>
                 </div>
                
                 <div class="testimonial-container">
                     <div class="progress-bar"></div>
-                    <div class="fas fa-quote-right fa-quote"></div>
-                    <div class="fas fa-quote-left fa-quote"></div>
-                    <p class="testimonial">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia repellendus, vitae suscipit culpa molestiae possimus voluptate consequuntur odit nulla saepe obcaecati dolorem laudantium praesentium aspernatur mollitia aperiam laborum rem cum commodi doloremque asperiores officia hic similique. Sint ad nobis quos?</p>
-                    <div class="user">
+                    <!-- <div class="fas fa-quote-right fa-quote"></div>
+                    <div class="fas fa-quote-left fa-quote"></div> -->
+                    <p class="testimonial">I'm truly impressed by Rodon Properties' attention to detail and professionalism in valuation. Their accurate assessments helped me make informed decisions, resulting in profitable transactions every time.
+                    </p>
+                    <!-- <div class="user">
                       <img src="https://randomuser.me/api/portraits/women/46.jpg" alt="user" class="user-image">
                       <div class="user-details">
                         <h4 class="username">Lola Smith</h4>
                         <p class="role">Marketing</p>
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
             </div>
@@ -546,74 +551,62 @@ button:hover .button-text {
 
 const testimonialsContainer = document.querySelector('.testimonials-container');
 const testimonial = document.querySelector('.testimonial');
-const userImage = document.querySelector('.user-image');
-const username = document.querySelector('.username');
-const role = document.querySelector('.role');
+// const userImage = document.querySelector('.user-image');
+// const username = document.querySelector('.username');
+// const role = document.querySelector('.role');
 
 const testimonials = [
   {
-    name: 'Miyah Myles',
-    position: 'Marketing',
-    photo:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=707b9c33066bf8808c934c8ab394dff6',
-    text:
-      "I've worked with literally hundreds of HTML/CSS developers and I have to say the top spot goes to this guy. This guy is an amazing developer. He stresses on good, clean code and pays heed to the details. I love developers who respect each and every aspect of a throughly thought out design and do their best to put it in code. He goes over and beyond and transforms ART into PIXELS - without a glitch, every time.",
+ text:
+      "Rodon Properties exceeded our expectations with their exceptional property management services. From marketing to negotiation, their team handled everything seamlessly, ensuring maximum returns on our investments.",
   },
   {
-    name: 'June Cha',
-    position: 'Software Engineer',
-    photo: 'https://randomuser.me/api/portraits/women/44.jpg',
+   
     text:
-      'This guy is an amazing frontend developer that delivered the task exactly how we need it, do your self a favor and hire him, you will not be disappointed by the work delivered. He will go the extra mile to make sure that you are happy with your project. I will surely work again with him!',
+      'Their commitment to client satisfaction is unmatched. Their personalized approach and responsive communication make them a pleasure to work with, ensuring a smooth and stress-free experience every time.',
   },
   {
-    name: 'Iida Niskanen',
-    position: 'Data Entry',
-    photo: 'https://randomuser.me/api/portraits/women/68.jpg',
+    
     text:
-      "This guy is a hard worker. Communication was also very good with him and he was very responsive all the time, something not easy to find in many freelancers. We'll definitely repeat with him.",
+      "Rodon Properties' dedication to customer satisfaction is unmatched. Their commitment to going above and beyond for their clients sets them apart in the real estate industry, earning trust and loyalty at every turn.",
   },
   {
-    name: 'Renee Sims',
-    position: 'Receptionist',
-    photo: 'https://randomuser.me/api/portraits/women/65.jpg',
+   
     text:
-      "This guy does everything he can to get the job done and done right. This is the second time I've hired him, and I'll hire him again in the future.",
+      "Their legal team provided invaluable guidance throughout the transaction process. Their expertise ensured everything went smoothly, giving me confidence in my property investment decisions.",
   },
   {
-    name: 'Jonathan Nunfiez',
-    position: 'Graphic Designer',
-    photo: 'https://randomuser.me/api/portraits/men/43.jpg',
+   
     text:
-      "I had my concerns that due to a tight deadline this project can't be done. But this guy proved me wrong not only he delivered an outstanding work but he managed to deliver 1 day prior to the deadline. And when I asked for some revisions he made them in MINUTES. I'm looking forward to work with him again and I totally recommend him. Thanks again!",
+      "Rodon Properties' valuation services are highly reliable and accurate. Their expert assessments provide clients with a clear understanding of their property's worth, guiding them towards informed decisions.",
   },
-  {
-    name: 'Sasha Ho',
-    position: 'Accountant',
-    photo:
-      'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?h=350&auto=compress&cs=tinysrgb',
-    text:
-      'This guy is a top notch designer and front end developer. He communicates well, works fast and produces quality work. We have been lucky to work with him!',
-  },
-  {
-    name: 'Veeti Seppanen',
-    position: 'Director',
-    photo: 'https://randomuser.me/api/portraits/men/97.jpg',
-    text:
-      'This guy is a young and talented IT professional, proactive and responsible, with a strong work ethic. He is very strong in PSD2HTML conversions and HTML/CSS technology. He is a quick learner, eager to learn new technologies. He is focused and has the good dynamics to achieve due dates and outstanding results.',
-  },
+  // {
+  //   name: 'Sasha Ho',
+  //   position: 'Accountant',
+  //   photo:
+  //     'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?h=350&auto=compress&cs=tinysrgb',
+  //   text:
+  //     'This guy is a top notch designer and front end developer. He communicates well, works fast and produces quality work. We have been lucky to work with him!',
+  // },
+  // {
+  //   name: 'Veeti Seppanen',
+  //   position: 'Director',
+  //   photo: 'https://randomuser.me/api/portraits/men/97.jpg',
+  //   text:
+  //     'This guy is a young and talented IT professional, proactive and responsible, with a strong work ethic. He is very strong in PSD2HTML conversions and HTML/CSS technology. He is a quick learner, eager to learn new technologies. He is focused and has the good dynamics to achieve due dates and outstanding results.',
+  // },
 ]
 
 
 let idx = 1;
 
 function updateTestimonials(){
-  const {name, position, photo, text} = testimonials[idx];
+  const {text} = testimonials[idx];
   
   testimonial.innerHTML = text;
-  userImage.src = photo;
-  username.innerHTML = name;
-  role.innerHTML = position;
+  // userImage.src = photo;
+  // username.innerHTML = name;
+  // role.innerHTML = position;
   
   idx++;
   
@@ -645,7 +638,8 @@ border-radius: 25vw / 2vh;
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
             <h1 class="mb-3">Gallary </h1>
             
-            <p>Watch our finest collections and deals</p>
+            <p>Explore our gallery showcasing our completed projects and successful deals. Get inspired by our portfolio of excellence and see how we turn visions into reality.
+            </p>
             
         </div>
         </div>
@@ -1160,7 +1154,7 @@ function addRemoveAnimationPrev() {
 
 </script>
 
-<br><br><br><br><br><br><br>
+
 <style>
   #holi {
 border-bottom: rgba(255, 0, 0, 0.515) solid 5px;
@@ -1172,21 +1166,22 @@ font-size: 20px;
 border-radius: 25vw / 7vh;
 }
 </style>
-<div id="holi">
+<!-- <div id="holi">
   <h1 class="mb-3">Our    Best Agents</h1>
-</div>
+</div> -->
 
   <!--/ Agents Star /-->
-  <section class="section-agents section-t2">
+  <!-- <section class="section-agents section-t2">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
           <div class="container-xxl py-5">
             <div class="container">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;"> -->
                     <!-- <h1 class="mb-3">Best Agents</h1> -->
               
-                    <p style="font-size: 20px;"> Best agents are with us to provide services to you..</p>
+                    <!-- <p style="font-size: 20px;">Meet the faces behind our success. Discover the expertise, dedication, and passion that drive our team to deliver exceptional service and results for our clients.
+                    </p>
                 </div>
         </div>
       </div>
@@ -1200,7 +1195,7 @@ border-radius: 25vw / 7vh;
               <div class="card-header-d">
                 <div class="card-title-d align-self-center">
                   <h3 class="title-d">
-                    <a href="agent-single.html" class="link-two">Margaret Sotillo
+                    <a href="" class="link-two">Margaret Sotillo
                       <br> Escala</a>
                   </h3>
                 </div>
@@ -1259,7 +1254,7 @@ border-radius: 25vw / 7vh;
               <div class="card-header-d">
                 <div class="card-title-d align-self-center">
                   <h3 class="title-d">
-                    <a href="agent-single.html" class="link-two">Stiven Spilver
+                    <a href="" class="link-two">Stiven Spilver
                       <br> Darw</a>
                   </h3>
                 </div>
@@ -1318,7 +1313,7 @@ border-radius: 25vw / 7vh;
               <div class="card-header-d">
                 <div class="card-title-d align-self-center">
                   <h3 class="title-d">
-                    <a href="agent-single.html" class="link-two">Emma Toledo
+                    <a href="#" class="link-two">Emma Toledo
                       <br> Cascada</a>
                   </h3>
                 </div>
@@ -1370,12 +1365,9 @@ border-radius: 25vw / 7vh;
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
-  <br>
-  <br>
-  <br>
-  <br>
+ 
 
   <!--/ Agents End /-->
 <style>.container{
@@ -1998,7 +1990,7 @@ margin-bottom: 20px;
 </div>
 
 <!-- Symbols -->
-<svg>
+<svg width="50%">
   <!-- Close icon -->
   <symbol id="icon-close" viewBox="0 0 32 32">
     <title>Close</title>

@@ -122,7 +122,7 @@ body {
 .page-header nav {
   display: flex;
   flex-direction: column;
-  min-height: 100%;
+  max-height: 100%;
 }
 
 .page-header .logo {
@@ -853,92 +853,77 @@ body {
   font-size: 12px;
   text-align: center;
 }
+
+/* @media only screen and (max-width: 768px) {
+            .logout {
+
+              margin-left: 100px;
+              
+            }
+          } */
 </style>
+
 <body>
    
-      <header class="page-header"> &nbsp;&nbsp;&nbsp;<h1>RODON</h1>
+      <header class="page-header" > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h1 style="margin-left: 30px;color: #259d75;">RODON</h1>
         <nav>
      
-          <!-- <button class="toggle-mob-menu" aria-expanded="false" aria-label="open menu">
-          d
-          </button> -->
-          <ul class="admin-menu">
-            <li class="menu-heading">
-              <h3>Enquiries </h3>
-            </li>
-            <li>
-              <a href="#0">
-                <svg>
-                  <use xlink:href="#pages"></use>
-                </svg>
-                <!-- <span>New Enquiries </span> -->
-              </a>
-            </li>
-            <li>
-              <a href="#0">
-                <svg>
-                  <use xlink:href="#users"></use>
-                </svg>
-                <!-- <span>All Enquiries </span> -->
-              </a>
-            </li>
-      
-         
-          </ul> 
+    
+       <br>
+              <h3 style="margin-left: 50px;color: #00b9eb;">Enquiries </h3>
+     <br>
+              <h3 style="margin-left: 50px;color: #3dba10c3;" id="logout">  <a href="{% url 'home' %}">
+                <span class="greeting">Logout</span></a></h3>
         </nav>
       </header>
-      <section class="page-content">
-        <section class="search-and-user">
-          <form>
-            <input type="search" placeholder="Search...">
-            <button type="submit" aria-label="submit form">
-              <svg aria-hidden="true">
-                <use xlink:href="#search"></use>
-              </svg>
-            </button>
-          </form>
-          <div class="admin-profile">
-            <a href="{% url 'home' %}">
-            <span class="greeting">Logout</span></a>
-            <div class="notifications">
-              <span class="badge">1</span>
-              <svg>
-                <use xlink:href="#users"></use>
-              </svg>
-            </div>
+      <section class="search-and-user">
+     
+        <div class="admin-profile">
+         
+          <!-- <span class="greeting">Logout</span></a> -->
+          <div class="notifications">
+            <!-- <span class="badge">1</span> -->
+            <svg>
+              <use xlink:href="#users"></use>
+            </svg>
           </div>
-        </section>
+        </div>
+      </section>  
+      <section class="page-content">
+       
         <section class="grid">
           <article style="background-color: #00b8eb00;">
 
             <div id="content-area" style="width: 100%;">
     
                 <!-- Message Options -->
-                <div id="message-options">
+                <!-- <div id="message-options">
           
                   
                   <div id="options-right">
                     <span id="sorted-by">Sorted by: <strong>Updated - by Newest <i class="fa fa-caret-down" aria-hidden="true"></i></strong></span>
                   </div>
-                </div>
+                </div> -->
                 
                 <!-- Row 1 -->
+                {% for i in data %}
                 <div class="message-row">
-                  <img width="40px" height="40px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6Mwikrsp1V3kTV0chB1-B5cjYfabyyxKgJthlsrwW2fcOJOIw">
-                  <span class="sender-name">Arturo	Fields (8)</span></br>
-                <span class="message"><span class="label blue-label label-left">Custom Printing</span>
+                  <!-- <img width="40px" height="40px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6Mwikrsp1V3kTV0chB1-B5cjYfabyyxKgJthlsrwW2fcOJOIw"> -->
+                  <span class="sender-name"><h1>{{i.name}}</h1></span></br>
+              <span class="label blue-label label-left">{{i.subject}}</span>
                 <br>
-                &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
-                <strong>amal@gmail.com</strong> 
-                <br>
-                &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
-                <strong>+91 25636545865</strong> 
                 
-                <br>  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;       <strong>Message:</strong> We would like to know aabouut  We would like to know aabouut We would like to know aabouut We would like to know aabouut We would like to know aabouutspan>
+                <strong class="message">{{i.email}}</strong> 
+                <br>
+                
+                <strong class="message">+91 {{i.phone}}</strong> 
+                
+                <br>      <p class="message">Message:{{i.message}}</p>
                 </div>
-              
+                <!-- <button style="margin-left: 50px;">s</button> -->
+              {% endfor %}
                 <!-- Row 2 -->
-                <div class="message-row">
+                <!-- <div class="message-row">
                     <img width="40px" height="40px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6Mwikrsp1V3kTV0chB1-B5cjYfabyyxKgJthlsrwW2fcOJOIw">
                     <span class="sender-name">Arturo	Fields (8)</span></br>
                   <span class="message"><span class="label blue-label label-left">Custom Printing</span>
@@ -950,10 +935,10 @@ body {
                   <strong>+91 25636545865</strong> 
                   
                   <br>  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;       <strong>Message:</strong> We would like to know aabouut  We would like to know aabouut We would like to know aabouut We would like to know aabouut We would like to know aabouutspan>
-                  </div>
+                  </div> -->
             
                 <!-- Row 3 -->
-                <div class="message-row">
+                <!-- <div class="message-row">
                     <img width="40px" height="40px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6Mwikrsp1V3kTV0chB1-B5cjYfabyyxKgJthlsrwW2fcOJOIw">
                     <span class="sender-name">Arturo	Fields (8)</span></br>
                   <span class="message"><span class="label blue-label label-left">Custom Printing</span>
@@ -966,9 +951,9 @@ body {
                   
                   <br>  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;       <strong>Message:</strong>  We would like to know aabouut  We would like to know aabouut We would like to know aabouut We would like to know aabouut We would like to know aabouutspan>
                   </div>
-            
+             -->
                 <!-- Row 4 -->
-                <div class="message-row">
+                <!-- <div class="message-row">
                     <img width="40px" height="40px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6Mwikrsp1V3kTV0chB1-B5cjYfabyyxKgJthlsrwW2fcOJOIw">
                     <span class="sender-name">Arturo	Fields (8)</span></br>
                   <span class="message"><span class="label blue-label label-left">Custom Printing</span>
@@ -981,9 +966,9 @@ body {
                   
                   <br>  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;       <strong>Message:</strong>  We would like to know aabouut  We would like to know aabouut We would like to know aabouut We would like to know aabouut We would like to know aabouutspan>
                   </div>
-            
+             -->
                 <!-- Row 5 -->
-                <div class="message-row">
+                <!-- <div class="message-row">
                     <img width="40px" height="40px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6Mwikrsp1V3kTV0chB1-B5cjYfabyyxKgJthlsrwW2fcOJOIw">
                     <span class="sender-name">Arturo	Fields (8)</span></br>
                   <span class="message"><span class="label blue-label label-left">Custom Printing</span>
@@ -995,7 +980,7 @@ body {
                   <strong>+91 25636545865</strong> 
                   
                   <br>  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;       <strong>Message:</strong>  We would like to know aabouut  We would like to know aabouut We would like to know aabouut We would like to know aabouut We would like to know aabouutspan>
-                  </div>
+                  </div> -->
             
               </div>
           </article>
